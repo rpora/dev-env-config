@@ -28,3 +28,8 @@ git clone git@github.com:rpora/nvim-config.git ~/.config/nvim
 rm -rf ~/.local/share/nvim/site/pack/packer/start/packer.nvim 
  git clone --depth 1 https://github.com/wbthomason/packer.nvim\
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+
+### tmux
+sudo apt install tmux
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+cp ./dotfiles/.tmux.conf ~/.tmux.conf
