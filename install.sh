@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # base
-sudo apt update && sudo apt install -y curl wget unzip python3 pipx build-essential
+sudo apt update && sudo apt install -y curl wget unzip python3 pipx build-essential \
+    ripgrep fd-find gcc clang make
 
 # node.js and nmp via volta
 curl https://get.volta.sh | bash
@@ -30,6 +31,7 @@ rm -rf ~/.local/share/nvim/site/pack/packer/start/packer.nvim
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
 ### tmux
+rm -rf ~/.tmux
 sudo apt install tmux
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 cp ./dotfiles/.tmux.conf ~/.tmux.conf
