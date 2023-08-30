@@ -1,11 +1,6 @@
 #!/bin/bash
 
-mkdir ./nvim && cd ./nvim
-wget https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
-tar xzvf nvim-linux64.tar.gz
-sudo cp -rlf nvim-linux64 /usr/local/bin/nvim
-sudo ln -sf /usr/local/bin/nvim/bin/nvim /usr/bin/nvim
-cd ../ && rm -r ./nvim
+sudo pacman -S neovim
 
 ## clone my custom config
 rm -rf ~/.config/nvim  

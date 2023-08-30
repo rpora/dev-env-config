@@ -1,5 +1,5 @@
 !#/bin/bash
-sudo apt install -y cmake pkg-config libfreetype6-dev libfontconfig1-dev libxcb-xfixes0-dev libxkbcommon-dev python3 gzip sdoc
+sudo pacman -S cmake freetype2 fontconfig pkg-config make libxcb libxkbcommon python gzip sdoc
 
 git clone git@github.com:alacritty/alacritty.git
 cd alacritty
@@ -15,7 +15,9 @@ scdoc < extra/man/alacritty.5.scd | gzip -c | sudo tee /usr/local/share/man/man5
 scdoc < extra/man/alacritty-bindings.5.scd | gzip -c | sudo tee /usr/local/share/man/man5/alacritty-bindings.5.gz > /dev/null
 
 # Auto completion
-echo "source $(pwd)/extra/completions/alacritty.bash" >> ~/.bashrc
+mkdir -p ~/.bash_completion
+cp extra/completions/alacritty.bash ~/.bash_completion/alacritty
+echo "source ~/.bash_completion/alacritty" >> ~/.bashrc
 
 # cleanup
 cd .. && rm -rf alacritty
