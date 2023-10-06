@@ -7,6 +7,9 @@ padding = { x = 10, y = 10 }
 normal = { family = "JetBrainsMono Nerd Font"}
 size = 12
 
+[env]
+TERM = xterm-256color
+
 [colors.primary]
 background = "#2d353b"
 foreground = "#CDD6F4"
