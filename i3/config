@@ -21,9 +21,9 @@ new_window pixel 0
 # hide_edge_borders both
 
 # Set inner/outer gaps
-gaps inner 15
-gaps outer -9
-gaps bottom 0
+# gaps inner 15
+# gaps outer -9
+# gaps bottom 0
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -66,12 +66,12 @@ bindsym $mod+Shift+Up resize grow height 10 px or 10 ppt
 bindsym $mod+Shift+Down resize shrink height 10 px or 10 ppt
 bindsym $mod+Shift+Left resize grow width 10 px or 10 ppt
 
-
 ######################################
 # keybindings for different actions: #
 ######################################
 
-bindsym $mod+Return exec alacritty 
+bindsym $mod+Return exec alacritty -e tmux
+bindsym $mod+Shift+Return exec alacritty
 bindsym $mod+Shift+q kill
 
 # Lock the system
@@ -149,7 +149,7 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 ## App shortcuts
-bindsym $mod+w exec /usr/bin/firefox
+bindsym $mod+z exec /usr/bin/firefox
 bindsym $mod+t exec /usr/bin/thunar
 bindsym Print exec scrot ~/%Y-%m-%d-%T-screenshot.png && notify-send "Screenshot saved to ~/$(date +"%Y-%m-%d-%T")-screenshot.png"
 bindsym $mod+Shift+Print exec maim -s | xclip -selection clipboard -t image/png -i
@@ -191,7 +191,7 @@ for_window [class=(?i)firefox] focus
 for_window [class=Thunar] focus
 for_window [class=Xreader] focus
 
-exec_always --no-startup-id picom --config  ~/.config/i3/picom.conf
+# exec_always --no-startup-id picom --config  ~/.config/i3/picom.conf
 exec_always --no-startup-id ~/.config/polybar/polybar.sh &
 
 #############################################
@@ -203,7 +203,7 @@ exec --no-startup-id dex --autostart --environment i3
 exec --no-startup-id unclutter --timeout 3
 
 # set wallpaper
-exec --no-startup-id sleep 1 && feh --no-fehbg --bg-scale '/home/rpora/.themes/wallpapers/ign_astronaut.png'   '/home/rpora/.themes/wallpapers/ign_astronaut.png' 
+ exec --no-startup-id sleep 1 && feh --no-fehbg --bg-scale '/home/rpora/.themes/wallpapers/ign_astronaut.pn'   '/home/rpora/.themes/wallpapers/ign_astronaut.pn' 
 
 # set powersavings for display:
 exec --no-startup-id xset s 480 dpms 600 600 60025
