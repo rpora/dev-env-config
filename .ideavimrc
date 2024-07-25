@@ -1,0 +1,78 @@
+""" see @https://github.com/JetBrains/ideavim/discussions/303 to get exemples
+""" ----------
+let mapleader=" "
+
+""" plugins
+set commentary
+set surround
+set highlightedyank
+set ideajoin
+
+""" Common settings
+set relativenumber
+set showmode
+set visualbell
+set number
+
+set scrolloff=8
+
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+
+""" IDEA settings
+set ideastatusicon=gray
+
+""" Clipboard
+set clipboard+=unnamedplus
+set clipboard+=ideaput
+
+""" Mappings --------------------------------
+
+""" Scroll and keep the line in the middle
+map <C-d> <C-d>zz
+map <C-u> <C-u>zz
+
+""" Keep search terms in the middle
+nnoremap n nzz
+nnoremap N Nzz
+
+""" Cancel search highlighting
+nnoremap <Esc> :nohlsearch<CR><Esc>
+
+" basic edition
+map <leader>r <Action>(ReformatCode)
+map <leader>t <Action>(Refactorings.QuickListPopupAction)
+map <leader>su <Action>(SurroundWith)
+
+" ace jump
+map <leader>, <Action>(AceAction)
+
+" navigate vcs changes
+nmap [c <Action>(VcsShowPrevChangeMarker)
+nmap ]c <Action>(VcsShowNextChangeMarker)
+
+" new files
+nmap <leader>ns <Action>(NewScratchFile)
+nmap <leader>nf <Action>(NewElementSamePlace)
+
+""" Handlers
+sethandler <C-2> a:ide
+sethandler <C-S-2> a:ide
+
+sethandler <C-6> a:vim
+sethandler <C-S-6> a:vim
+sethandler <C-b> a:vim
+sethandler <C-c> a:vim
+sethandler <C-v> a:vim
+
+sethandler <C-f> a:ide
+sethandler <C-e> a:ide
+sethandler <C-t> a:ide
+sethandler <C-j> a:ide
+sethandler <C-g> a:ide
+
+sethandler <C-a> a:vim
+sethandler <C-d> a:vim
+sethandler <C-r> a:vim
