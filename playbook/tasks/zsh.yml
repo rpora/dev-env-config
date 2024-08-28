@@ -17,7 +17,7 @@
 
 - name: Copy .zshrc
   ansible.builtin.copy:
-    src: /usr/local/bin/dev-env-config/.zshrc
+    src: ../../dotfiles/zsh/.zshrc
     dest: ~/.zshrc
   tags:
     - zsh
