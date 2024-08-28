@@ -1,0 +1,13 @@
+[user]
+	email = raphael.pora@gmail.com
+	name = Raphael Pora
+[alias]
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset-%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	st = status
+[core]
+	excludesfile = ~/.gitignore_global
+	autocrlf = false
+[credential "helperselector"]
+	selected = manager-core
+[init]
+	defaultBranch = main

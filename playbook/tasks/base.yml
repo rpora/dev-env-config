@@ -1,0 +1,14 @@
+- name: Install apt dependencies
+  apt:
+    pkg:
+      - cmake
+      - ninja-build
+      - gettext
+      - unzip
+      - curl
+      - git
+      - wget
+      - software-properties-common
+      - build-essential
+  tags:
+    - base

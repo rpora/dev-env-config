@@ -1,0 +1,8 @@
+- name: Install fzf test
+  ansible.builtin.git:
+    repo: https://github.com/junegunn/fzf.git
+    dest: ~/.fzf
+    depth: 1
+
+- name: Setup fzf
+  shell: ~/.fzf/install

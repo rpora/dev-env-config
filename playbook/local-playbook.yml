@@ -1,0 +1,23 @@
+- hosts: 
+    - localhost
+  
+  become: true
+
+  pre_tasks:
+    - name: Update cache
+      apt:
+        update_cache: true
+
+  tasks:
+    - ansible.builtin.include_tasks: tasks/base.yml
+      tags:
+        - always
+
+    - ansible.builtin.include_tasks: tasks/zsh.yml
+    - ansible.builtin.include_tasks: tasks/fzf.yml
+    - ansible.builtin.include_tasks: tasks/node.yml
+    - ansible.builtin.include_tasks: tasks/vim.yml
+
+    - ansible.builtin.include_tasks: tasks/neovim.yml
+      tags:
+        - always
