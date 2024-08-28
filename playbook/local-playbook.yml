@@ -3,6 +3,7 @@
   
   become: true
 
+
   pre_tasks:
     - name: Update cache
       apt:
@@ -10,6 +11,10 @@
 
   tasks:
     - ansible.builtin.include_tasks: tasks/base.yml
+      tags:
+        - always
+
+    - ansible.builtin.include_tasks: tasks/ssh.yml
       tags:
         - always
 

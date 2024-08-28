@@ -1,0 +1,9 @@
+- name: Copy the ssh keys
+  become: yes
+  copy:
+    src: "/usr/local/bin/dev-env-config/.ssh/"
+    dest: "{{ ansible_env.HOME }}/.ssh/"
+    mode: 0600
+  tags:
+    - ssh
+
