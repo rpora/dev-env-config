@@ -46,8 +46,12 @@ map <leader>r <Action>(ReformatCode)
 map <leader>t <Action>(Refactorings.QuickListPopupAction)
 map <leader>su <Action>(SurroundWith)
 
-" ace jump
-map <leader>, <Action>(AceAction)
+""" Navigation
+nmap <leader>nb <Action>(ShowNavBar)
+nmap <leader>e <Action>(RecentFiles)
+nmap <leader>ff <Action>(GotoFile )
+nmap <leader>fs <Action>(GotoSymbol)
+nmap <leader>fg <Action>(FindInPath)
 
 " navigate vcs changes
 nmap [c <Action>(VcsShowPrevChangeMarker)
@@ -75,4 +79,4 @@ sethandler <C-g> a:ide
 
 sethandler <C-a> a:vim
 sethandler <C-d> a:vim
-sethandler <C-r> a:vim
+s
